@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'ajout</title>
+</head>
+<body>
+    <h2>Ajouter un nouvel article:</h2>
+
+    <form action="/add/" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Title..." name="title">
+        <input type="text" placeholder="Author..." name="author">
+        <input type="date" name="date">
+        <textarea name="description" id=""></textarea>
+
+        <button type="submit">ADD</button>
+        {% if added %}
+            <div>Article Ajouté avec succès.</div>
+        {% endif %}
+    </form>
+</body>
+</html>
